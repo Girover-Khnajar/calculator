@@ -21,6 +21,12 @@ export class CalculatorService {
     } else if (value === 'C') {
       this.clear();
     } else {
+      if (this.currentValue == '0' && value == '0'){ 
+        return;
+      }
+      if (this.currentValue == '0'){
+        this.currentValue = '';
+      }
       this.currentValue += value;
     }
   }
